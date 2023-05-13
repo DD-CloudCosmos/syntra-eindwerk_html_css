@@ -1,0 +1,18 @@
+@mixin icon($id, $bgcolor: $blue, $color: $white, $size: 32px) {
+  width: $size;
+  height: $size;
+  -webkit-mask-image: url('../icons/icons.svg#{"#"}#{$id}');
+  mask-image: url('../icons/icons.svg#{"#"}#{$id}');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-color: $bgcolor;
+  color: $color;
+}
+
+@mixin responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}

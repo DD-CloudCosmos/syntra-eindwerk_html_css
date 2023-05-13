@@ -1,0 +1,106 @@
+@use "./variables" as *;
+@use "./fonts";
+@use "./mixins" as *;
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+/* .full-bleed {
+  box-shadow: 0 0 0 100vmax red;
+  clip-path: inset(0 -100vmax);
+} */
+
+body {
+  font-weight: 400;
+  background-color: $yellow;
+  div.container {
+    max-width: 80%;
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 12.1rem;
+      background-color: $darkYellow;
+      box-shadow: 0 0 0 100vmax $darkYellow;
+      clip-path: inset(0 -100vmax);
+
+      .logo__a__img {
+        @include responsive;
+      }
+      nav {
+        //display: flex;
+        ul.nav__links {
+          display: flex;
+          flex-direction: row;
+          background-color: #1935ee;
+          align-content: stretch;
+          li {
+            //display: inline-block;
+            a {
+              color: $white;
+              font-size: 2.9rem;
+              padding: 0.5rem;
+              margin-left: 3.2rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .form__search {
+        border: none;
+        position: relative;
+        font-size: 2.83rem;
+        background-color: $blue;
+        &__input {
+          border: none;
+          outline: none;
+          padding: 0 2rem;
+          height: 5.1rem;
+          width: 20.3rem;
+          background-color: $yellow;
+          color: $white;
+          &::placeholder {
+            color: $white;
+          }
+        }
+        &__button {
+          //position: absolute;
+          top: 0;
+          right: -7rem;
+          padding: 1.4rem 2.4rem;
+          /*           height: 5.1rem;
+          width: 7.1rem; */
+          border: 0;
+          //color: $white;
+          //background-color: $blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          //flex-direction: column;
+          @include icon(
+            "icon-search",
+            $bgcolor: $blue,
+            $color: $white,
+            $size: 2.3rem
+          );
+        }
+      }
+    }
+
+    .hero {
+      height: calc(100vh - 12.1rem);
+    }
+  }
+
+  /*   .ico {
+    display: block;
+    @include icon($id: "icon-doctor", $color: red, $size: 5rem);
+  } */
+}
