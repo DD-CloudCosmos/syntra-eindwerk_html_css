@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview --open --host",
     "predeploy": "npm run build",
-    "deploy": "surge ./dist ********************************************.surge.sh",
+    "deploy": "surge ./dist daviddeceuninck_eindwerk2023.surge.sh",
     "css": "sass ./css/style.scss ./css/style.css --style=compressed --watch",
     "svg install": "npm i -g stack-svg",
     "svg": "stack-svg ./icons/symbol-defs.svg ./icons/icons.svg"
