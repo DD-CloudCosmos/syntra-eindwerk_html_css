@@ -1,4 +1,4 @@
-@mixin icon($id, $bgcolor: $blue, $color: $white, $size: 32px) {
+@mixin icon($id, $bgcolor, $color, $size) {
   width: $size;
   height: $size;
   -webkit-mask-image: url('../icons/icons.svg#{"#"}#{$id}');
@@ -7,7 +7,7 @@
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   mask-size: contain;
-  background-color: $bgcolor;
+  background: $bgcolor;
   color: $color;
 }
 

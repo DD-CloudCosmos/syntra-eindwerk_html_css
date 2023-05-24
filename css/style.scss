@@ -19,6 +19,7 @@ body {
     margin: 0 auto;
     a {
       text-decoration: none;
+      color: $white;
     }
 
     header {
@@ -30,24 +31,34 @@ body {
       box-shadow: 0 0 0 100vmax $darkYellow;
       clip-path: inset(0 -100vmax);
 
-      .logo__a__img {
-        @include responsive;
+      a {
+        padding: 5px;
+        margin-left: -5px;
+        .logo__a__img {
+          @include responsive;
+          min-width: 21.2rem;
+        }
       }
+
       nav {
-        //display: flex;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        //background: red;
         ul.nav__links {
           display: flex;
+          gap: 3.2rem;
           flex-direction: row;
-          background-color: #1935ee;
-          align-content: stretch;
+          //background-color: #1935ee;
+          //align-content: stretch;
           li {
             //display: inline-block;
             a {
               color: $white;
               font-size: 2.9rem;
               padding: 0.5rem;
-              margin-left: 3.2rem;
               font-weight: 500;
+              //background: black;
             }
           }
         }
@@ -58,12 +69,13 @@ body {
         position: relative;
         font-size: 2.83rem;
         background-color: $blue;
+        display: flex;
         &__input {
           border: none;
           outline: none;
           padding: 0 2rem;
-          height: 5.1rem;
-          width: 20.3rem;
+          max-height: 5.1rem;
+          max-width: 20.3rem;
           background-color: $yellow;
           color: $white;
           &::placeholder {
@@ -71,22 +83,11 @@ body {
           }
         }
         &__button {
-          //position: absolute;
           top: 0;
-          right: -7rem;
           padding: 1.4rem 2.4rem;
-          /*           height: 5.1rem;
-          width: 7.1rem; */
-          border: 0;
-          //color: $white;
-          //background-color: $blue;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          //flex-direction: column;
           @include icon(
             "icon-search",
-            $bgcolor: $blue,
+            $bgcolor: $white,
             $color: $white,
             $size: 2.3rem
           );
@@ -96,11 +97,477 @@ body {
 
     .hero {
       height: calc(100vh - 12.1rem);
+      position: relative;
+      .sectionOne {
+        color: $white;
+        max-width: 66.2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        h1 {
+          font-weight: 600;
+          font-size: 6.66rem;
+          line-height: 8.1rem;
+        }
+        p {
+          font-weight: 400;
+          font-size: 2.91rem;
+          line-height: 3.5rem;
+        }
+
+        .cta {
+          display: flex;
+          gap: 3.5rem;
+          font-weight: 600;
+          font-size: 2.08rem;
+
+          :first-child {
+            background: $blue;
+            border-radius: 6px;
+            height: 6.9rem;
+            line-height: 6.9rem;
+            text-align: center;
+            width: 18.2rem;
+          }
+          :last-child {
+            height: 6.9rem;
+            line-height: 6.9rem;
+            text-align: center;
+            width: 18.2rem;
+            border-radius: 6px;
+            border: 3px solid $white;
+          }
+        }
+      }
+      img {
+        position: absolute;
+        top: 21%;
+        right: 0;
+      }
+    }
+
+    .sectionTwoHolder {
+      position: relative;
+      background-color: $white;
+      box-shadow: 0 0 0 100vmax $white;
+      clip-path: inset(0 -100vmax);
+      section {
+        max-width: 56.9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        h2 {
+          margin-top: 22rem;
+          font-weight: 600;
+          font-size: 5rem;
+          line-height: 6.1rem;
+          margin-bottom: 0.4rem;
+        }
+        p {
+          font-weight: 400;
+          font-size: 2.91rem;
+          line-height: 3.5rem;
+        }
+        a {
+          background: $yellow;
+          border-radius: 6px;
+          height: 6.9rem;
+          line-height: 6.9rem;
+          text-align: center;
+          width: 18.2rem;
+          font-weight: 600;
+          font-size: 2.08rem;
+          margin-bottom: 22.6rem;
+        }
+        .sectionTwo__img_holder {
+          position: absolute;
+          right: 0;
+          top: 18%;
+          img {
+            position: relative;
+          }
+          &:after {
+            content: "";
+            background: rgba(252, 195, 2, 0.6);
+            display: block;
+            width: 100%;
+            height: calc(100% - 1px);
+            position: absolute;
+            top: 0;
+            //opacity: 0.6;
+            z-index: 10;
+            box-shadow: -166px 159px 0px -127px rgba(252, 195, 2, 1);
+          }
+        }
+      }
+    }
+
+    .sectionThreeHolder {
+      padding-top: 10.2rem;
+      section {
+        display: grid;
+        gap: 6.6rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 10rem;
+        color: $white;
+        text-align: center;
+        h1 {
+          font-weight: 700;
+          font-size: 7.5rem;
+          padding-bottom: 13.7rem;
+          grid-column: span 3;
+        }
+        .card {
+          h2 {
+            font-weight: 600;
+            font-size: 3.75rem;
+            padding-top: 5.3rem;
+          }
+          p {
+            font-weight: 400;
+            font-size: 2.5rem;
+            padding-top: 2.5rem;
+          }
+          img {
+            border: solid 6px;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+    .sectionFourHolder {
+      position: relative;
+      background-color: $white;
+      box-shadow: 0 0 0 100vmax $white;
+      clip-path: inset(0 -100vmax);
+      text-align: right;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 21.7rem 0;
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        max-width: 56.1rem;
+        align-items: end;
+        h2 {
+          //margin-top: 22rem;
+          font-weight: 600;
+          font-size: 5rem;
+          line-height: 6.1rem;
+          color: black;
+        }
+        p {
+          font-weight: 400;
+          font-size: 2.91rem;
+          line-height: 3.5rem;
+          color: black;
+        }
+        a {
+          background: $yellow;
+          border-radius: 6px;
+          height: 6.9rem;
+          line-height: 6.9rem;
+          text-align: center;
+          width: 18.2rem;
+          font-weight: 600;
+          font-size: 2.08rem;
+          margin-bottom: 22.6rem;
+        }
+      }
+      .sectionFour__img_holder {
+        position: absolute;
+        left: 0;
+        top: 14%;
+        a {
+          height: 100%;
+          display: block;
+          img {
+            position: relative;
+            box-shadow: 166px 159px 0px -127px #fcc302;
+          }
+          &:after {
+            background: rgba(252, 195, 2, 0.6);
+            content: "";
+            display: block;
+            width: 100%;
+            height: calc(100% - 1px);
+            position: absolute;
+            top: 0;
+            z-index: 10;
+          }
+          .btn__play {
+            position: absolute;
+            display: block;
+            width: 8.4rem;
+            height: 8.4rem;
+            //background: $white;
+            z-index: 11;
+            border-radius: 50%;
+            top: 50%;
+            @include icon(
+              "icon-play",
+              $bgcolor: $yellow,
+              $color: $white,
+              $size: 2rem
+            );
+            left: auto;
+          }
+        }
+      }
+    }
+    .sectionFiveHolder {
+      padding-top: 11rem;
+      section {
+        margin-bottom: 11rem;
+        color: $white;
+        text-align: center;
+        h1 {
+          font-weight: 700;
+          font-size: 7.5rem;
+          padding-bottom: 3.6rem;
+        }
+        p {
+          font-weight: 400;
+          font-size: 3.33rem;
+          padding-bottom: 10rem;
+          line-height: 4rem;
+        }
+        .cardHolder {
+          display: grid;
+          gap: 6.6rem;
+          grid-template-columns: 1fr 1fr 1fr;
+
+          .card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            justify-content: center;
+            h2 {
+              font-weight: 600;
+              font-size: 4.16rem;
+              padding-top: 1rem;
+              word-spacing: 3rem;
+              span {
+                text-decoration: line-through;
+              }
+            }
+            img {
+              border: solid 6px;
+              max-width: 100%;
+            }
+            a {
+              padding: 1.7rem 4.6rem;
+              font-weight: 600;
+              font-size: 2.5rem;
+              background: $blue;
+              border-radius: 24px;
+              //max-width: 19.9rem;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .sectionSixHolder {
+      position: relative;
+      background-color: $white;
+      box-shadow: 0 0 0 100vmax $white;
+      clip-path: inset(0 -100vmax);
+      padding-top: 14.5rem;
+      section {
+        display: grid;
+        gap: 3.8rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 10rem;
+        color: black;
+        text-align: center;
+
+        h1 {
+          grid-column: span 3;
+          font-weight: 700;
+          font-size: 7.5rem;
+        }
+        p {
+          grid-column: span 3;
+          font-weight: 400;
+          font-size: 3.33rem;
+          line-height: 4rem;
+        }
+        .card {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.9rem;
+          img {
+            max-width: 100%;
+            margin-bottom: 2rem;
+          }
+          h2 {
+            font-weight: 700;
+            font-size: 2.91rem;
+          }
+          h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 2.5rem;
+          }
+          .socialHolder {
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+            margin-bottom: 14rem;
+
+            & :nth-child(1) {
+              background: $darkYellow;
+              border-radius: 50%;
+              height: 3.5rem;
+              width: 3.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &::after {
+                content: "";
+                @include icon(
+                  "icon-instagram",
+                  $bgcolor: $white,
+                  $color: $darkYellow,
+                  $size: 2.1rem
+                );
+              }
+            }
+
+            & :nth-child(2) {
+              background: $darkYellow;
+              border-radius: 50%;
+              height: 3.5rem;
+              width: 3.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &::after {
+                content: "";
+                @include icon(
+                  "icon-facebook",
+                  $bgcolor: $white,
+                  $color: $darkYellow,
+                  $size: 2.1rem
+                );
+              }
+            }
+            & :nth-child(3) {
+              background: $darkYellow;
+              border-radius: 50%;
+              height: 3.5rem;
+              width: 3.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &::after {
+                content: "";
+                @include icon(
+                  "icon-twitter",
+                  $bgcolor: $white,
+                  $color: $darkYellow,
+                  $size: 2.1rem
+                );
+              }
+            }
+            & :nth-child(4) {
+              background: $darkYellow;
+              border-radius: 50%;
+              height: 3.5rem;
+              width: 3.5rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &::after {
+                content: "";
+                @include icon(
+                  "icon-whatsapp",
+                  $bgcolor: $white,
+                  $color: $darkYellow,
+                  $size: 2.1rem
+                );
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sectionSevenHolder {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      color: $white;
+      background-color: transparent;
+      //padding-top: 16.5rem;
+      //background-image: url("../img/image12.png");
+      background: rgba(252, 195, 2, 0.6);
+      max-height: 57.6rem;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        background-image: url("../img/image12.png");
+
+        z-index: -1;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div {
+          margin: auto;
+          text-align: center;
+          margin-bottom: 5.9rem;
+          &#card_heart {
+            @include icon(
+              "icon-heart",
+              $bgcolor: $white,
+              $color: $darkYellow,
+              $size: 10.2rem
+            );
+          }
+          &#card_doctor {
+            @include icon(
+              "icon-doctor",
+              $bgcolor: $white,
+              $color: $darkYellow,
+              $size: 10.2rem
+            );
+          }
+          &#card_injection {
+            @include icon(
+              "icon-injection",
+              $bgcolor: $white,
+              $color: $darkYellow,
+              $size: 10.2rem
+            );
+          }
+        }
+        h3 {
+          font-weight: 500;
+          font-size: 4.16rem;
+          margin-bottom: 2.75rem;
+        }
+        h2 {
+          font-weight: 700;
+          font-size: 3.75rem;
+        }
+      }
     }
   }
+}
 
-  /*   .ico {
+/*   .ico {
     display: block;
     @include icon($id: "icon-doctor", $color: red, $size: 5rem);
   } */
-}
